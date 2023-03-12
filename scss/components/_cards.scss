@@ -1,0 +1,137 @@
+.card {
+    background-color: var(--color-background-card);
+    border-radius: 16px;
+    max-width: 343px;
+    overflow: hidden;
+    padding-bottom: 24px;
+
+    @media(min-width:64em) {
+        max-width: 480px;
+    }
+
+    &__content {
+        margin-top: 40px;
+        padding-inline: 16px;
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    &__list {
+        align-items: center;
+        border-radius: 16px;
+        background-color: var(--color-background-list);
+        display: flex;
+        justify-content: space-between;
+        margin-block: 32px;
+        padding: 16px 27px;
+    }
+
+    &__list--content {
+        display: grid;
+        row-gap: 2px;
+        position: relative;
+
+        &::before {
+            background-color: var(--color-background);
+            content: '';
+            height: 100%;
+            left: -24px;
+            position: absolute;
+            top: 0;
+            width: 1px;
+
+        }
+    }
+
+    &__list--btn {
+        color: var(--color-primary);
+        position: relative;
+
+        &::after {
+            bottom: 0;
+            background-color: var(--color-primary);
+            border-radius: 6px;
+            content: '';
+            height: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            transition: background-color .35s linear;
+            width: 100%;
+        }
+
+        &:is(:hover, :active, :focus)::after {
+            animation: stroke 1s ease forwards;
+        }
+    }
+
+
+    &__btn-priamry {
+        background-color: var(--color-primary);
+        box-shadow: 10px 10px 25px -5px rgba(73, 2, 69, .7),
+            -10px 15px 25px -15px rgba(73, 2, 69, .6);
+        border-radius: 16px;
+        color: var(--color-white);
+        font-size: 1rem;
+        font-weight: var(--fw-bold);
+        line-height: 160%;
+        letter-spacing: -1%;
+        padding-block: 15px;
+        position: relative;
+        transition: background-color .35s linear, box-shadow .35s linear;
+        width: 100%;
+        white-space: nowrap;
+
+        &:hover{
+            background-color: var(--color-hover);
+            box-shadow: 10px 15px 25px -10px rgba(73, 2, 69, 1),
+                -10px 15px 25px -10px rgba(73, 2, 69, .8);
+        }
+    }
+
+    &__btn-secondary {
+        position: relative;
+        transition: color .35s linear;
+        margin-top: 24px;
+
+        &::after {
+            bottom: 0;
+            background-color: var(--color-title);
+            border-radius: 6px;
+            content: '';
+            height: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            transition: background-color .35s linear;
+            width: 100%;
+        }
+
+        &:is(:hover, :active, :focus) {
+            color: var(--color-primary);
+        }
+
+        &:is(:hover, :active, :focus)::after {
+            animation: stroke 1s ease forwards;
+            background-color: var(--color-primary);
+        }
+    }
+
+}
+
+@keyframes stroke {
+    0% {
+        width: 100%;
+    }
+
+    50% {
+        width: 5%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

@@ -1,0 +1,33 @@
+:root {
+    // colors //
+    --color-background: rgba(133, 133, 155, 1);
+    --color-background-list: rgba(133, 133, 155, .2);
+    --color-stroke: rgba(207, 209, 221, 1);
+    --color-background-card: rgba(248, 249, 254, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --color-title: rgba(21, 24, 39, 1);
+    --color-primary: rgba(104, 2, 98, 1);
+    --color-hover: rgba(73, 2, 69, 1);
+
+    // desktop font size //
+    @media(min-width: 64em) {
+        --fs-h1: 2rem;
+        --fs-h2: 1.125rem;
+        --fs-text: 1rem;
+        --fs-text-card: .875rem;
+    }
+
+    // mobile + tablet font size //
+    --fs-h1:1.5rem;
+    --fs-h2: 1rem;
+    --fs-text:.875rem;
+    --fs-text-card:.75rem;
+
+    // font weight //
+    --fw-medium: 500;
+    --fw-bold:700;
+
+    // font family //
+    --ff:'Manrope',
+    sans-serif;
+}

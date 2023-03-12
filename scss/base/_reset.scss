@@ -1,0 +1,43 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--color-background);
+    // background-color: rgba(248, 249, 254, 1);
+    font-family: var(--ff);
+    height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
