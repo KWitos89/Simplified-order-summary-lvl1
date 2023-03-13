@@ -140,6 +140,8 @@ a {
   max-width: 343px;
   overflow: hidden;
   padding-bottom: 24px;
+  height: -moz-max-content;
+  height: max-content;
 }
 @media (min-width: 64em) {
   .card {
@@ -258,6 +260,38 @@ a {
   transition: all 0.1s ease-in-out;
   display: grid;
   place-items: center;
+}
+
+.btn--circle {
+  border-radius: 50%;
+  width: 55.6px;
+  height: 55.6px;
+  margin-inline: auto;
+  position: relative;
+  animation: circle 2s linear infinite 1s;
+  transition: all 0.5s ease;
+}
+.btn--circle::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-background-card);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.btn--circle span {
+  display: none;
+}
+
+.card__box-action {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
 }
 
 .active {
