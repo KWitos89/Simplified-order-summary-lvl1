@@ -12,7 +12,7 @@ ul {
 
 a {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
 
 button,
@@ -27,8 +27,7 @@ input {
 }
 
 body {
-    background-color: var(--color-background);
-    // background-color: rgba(248, 249, 254, 1);
+    background-color: var(--color-stroke);
     font-family: var(--ff);
     height: 100vh;
 }
@@ -39,5 +38,5 @@ html {
 
 img {
     display: block;
-    width: 100%;
+    max-width: 100%;
 }

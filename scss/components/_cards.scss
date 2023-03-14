@@ -1,11 +1,13 @@
 .card {
     background-color: var(--color-background-card);
+     box-shadow: 10px 35px 25px rgba(0, 0, 0, 0.4),
+     -10px 35px 25px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
+    height: max-content;
     max-width: 343px;
     overflow: hidden;
     padding-bottom: 24px;
-    height: max-content;
-    
+
     @media(min-width:64em) {
         max-width: 480px;
     }
@@ -32,8 +34,8 @@
 
     &__list--content {
         display: grid;
-        row-gap: 2px;
         position: relative;
+        row-gap: 2px;
 
         &::before {
             background-color: var(--color-background);
@@ -43,7 +45,6 @@
             position: absolute;
             top: 0;
             width: 1px;
-
         }
     }
 
@@ -58,8 +59,8 @@
             content: '';
             height: 1px;
             left: 50%;
-            transform: translateX(-50%);
             position: absolute;
+            transform: translateX(-50%);
             transition: background-color .35s linear;
             width: 100%;
         }
@@ -71,13 +72,17 @@
 
 
     &__btn-priamry {
+        align-items: center;
         background-color: var(--color-primary);
         box-shadow: 10px 10px 25px -5px rgba(73, 2, 69, .7),
             -10px 15px 25px -15px rgba(73, 2, 69, .6);
         border-radius: 16px;
         color: var(--color-white);
+        display: flex;
         font-size: 1rem;
         font-weight: var(--fw-bold);
+        height: 55.6px;
+        justify-content: center;
         line-height: 160%;
         letter-spacing: -1%;
         padding-block: 15px;
@@ -86,7 +91,7 @@
         width: 100%;
         white-space: nowrap;
 
-        &:hover{
+        &:hover {
             background-color: var(--color-hover);
             box-shadow: 10px 15px 25px -10px rgba(73, 2, 69, 1),
                 -10px 15px 25px -10px rgba(73, 2, 69, .8);
@@ -94,9 +99,9 @@
     }
 
     &__btn-secondary {
+        margin-top: 24px;
         position: relative;
         transition: color .35s linear;
-        margin-top: 24px;
 
         &::after {
             bottom: 0;
@@ -105,8 +110,8 @@
             content: '';
             height: 1px;
             left: 50%;
-            transform: translateX(-50%);
             position: absolute;
+            transform: translateX(-50%);
             transition: background-color .35s linear;
             width: 100%;
         }

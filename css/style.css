@@ -55,7 +55,7 @@ input {
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-stroke);
   font-family: var(--ff);
   height: 100vh;
 }
@@ -66,7 +66,7 @@ html {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 h1 {
@@ -136,12 +136,13 @@ a {
 
 .card {
   background-color: var(--color-background-card);
+  box-shadow: 10px 35px 25px rgba(0, 0, 0, 0.4), -10px 35px 25px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  height: -moz-max-content;
+  height: max-content;
   max-width: 343px;
   overflow: hidden;
   padding-bottom: 24px;
-  height: -moz-max-content;
-  height: max-content;
 }
 @media (min-width: 64em) {
   .card {
@@ -167,8 +168,8 @@ a {
 }
 .card__list--content {
   display: grid;
-  row-gap: 2px;
   position: relative;
+  row-gap: 2px;
 }
 .card__list--content::before {
   background-color: var(--color-background);
@@ -190,8 +191,8 @@ a {
   content: "";
   height: 1px;
   left: 50%;
-  transform: translateX(-50%);
   position: absolute;
+  transform: translateX(-50%);
   transition: background-color 0.35s linear;
   width: 100%;
 }
@@ -199,12 +200,16 @@ a {
   animation: stroke 1s ease forwards;
 }
 .card__btn-priamry {
+  align-items: center;
   background-color: var(--color-primary);
   box-shadow: 10px 10px 25px -5px rgba(73, 2, 69, 0.7), -10px 15px 25px -15px rgba(73, 2, 69, 0.6);
   border-radius: 16px;
   color: var(--color-white);
+  display: flex;
   font-size: 1rem;
   font-weight: var(--fw-bold);
+  height: 55.6px;
+  justify-content: center;
   line-height: 160%;
   letter-spacing: -1%;
   padding-block: 15px;
@@ -218,9 +223,9 @@ a {
   box-shadow: 10px 15px 25px -10px rgb(73, 2, 69), -10px 15px 25px -10px rgba(73, 2, 69, 0.8);
 }
 .card__btn-secondary {
+  margin-top: 24px;
   position: relative;
   transition: color 0.35s linear;
-  margin-top: 24px;
 }
 .card__btn-secondary::after {
   bottom: 0;
@@ -229,8 +234,8 @@ a {
   content: "";
   height: 1px;
   left: 50%;
-  transform: translateX(-50%);
   position: absolute;
+  transform: translateX(-50%);
   transition: background-color 0.35s linear;
   width: 100%;
 }
@@ -253,73 +258,69 @@ a {
     width: 100%;
   }
 }
-.charging--btn {
-  background-color: var(--color-hover);
-  box-shadow: 10px 15px 25px -10px rgb(73, 2, 69), -10px 15px 25px -10px rgba(73, 2, 69, 0.8);
-  color: transparent;
-  transition: all 0.1s ease-in-out;
-  display: grid;
-  place-items: center;
-}
-
-.btn--circle {
+.loanding {
+  aspect-ratio: 1/1;
+  background-color: var(--color-primary);
   border-radius: 50%;
-  width: 55.6px;
-  height: 55.6px;
-  margin-inline: auto;
+  width: 40px;
   position: relative;
-  animation: circle 2s linear infinite 1s;
-  transition: all 0.5s ease;
+  animation: sprint 2s linear infinite;
+  transition: opacity 0.35s ease;
 }
-.btn--circle::after {
+.loanding::after {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--color-hover);
   content: "";
   position: absolute;
-  background-color: var(--color-background-card);
   left: 50%;
+  width: 20px;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 30px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
 }
-.btn--circle span {
-  display: none;
+.loanding::before {
+  aspect-ratio: 1/1;
+  background-color: var(--color-hover);
+  content: "";
+  position: absolute;
+  width: 20px;
 }
 
-.card__box-action {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+.done {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
   margin-inline: auto;
+  position: relative;
+  transition: all 0.35s ease;
+  width: 55.6px;
 }
-
-.active {
-  animation: circle 1s linear infinite;
+.done::after {
   aspect-ratio: 1/1;
+  background-color: var(--color-background-card);
   border-radius: 50%;
-  background-image: linear-gradient(yellow, red, orange);
+  content: "";
   position: absolute;
   width: 40px;
 }
-.active::after {
-  aspect-ratio: 1/1;
-  background-color: var(--color-hover);
-  border-radius: 50%;
-  content: "";
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 70%;
-}
 
-.hiden {
+.check {
   display: none;
 }
 
-@keyframes circle {
-  100% {
+.check--active {
+  color: var(--color-hover);
+  display: block;
+  font-size: 24px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+@keyframes sprint {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -327,5 +328,5 @@ a {
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
