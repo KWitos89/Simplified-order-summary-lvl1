@@ -2,6 +2,7 @@ const btn = document.querySelector(".card__btn-priamry");
 const box = document.querySelector(".box--effect");
 const textbtn = document.querySelector(".btn--text");
 const checkIcon = document.querySelector(".check");
+const cancelBtn = document.querySelector(".card__btn-secondary");
 
 const loading = () => {
 
@@ -21,4 +22,20 @@ const loading = () => {
 
 };
 
+const cancelOrder = () => {
+    if (btn.classList.contains("done")) {
+        btn.classList.remove("done");
+        btn.style.pointerEvents = "";
+        btn.style.cursor = "pointer";
+        btn.style.backgroundColor = "";
+        btn.style.boxShadow = "";
+        checkIcon.classList.remove("check--active");
+        textbtn.textContent = "Proceed to Payment";
+    } else {
+        return
+    };
+};
+
+
+cancelBtn.addEventListener('click', cancelOrder);
 btn.addEventListener('click', loading);
